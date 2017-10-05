@@ -9,8 +9,9 @@ echo output=text >> ~/.aws/config
 ```
 * get latest Amazon Linux AMIs:
 ```bash
-aws ec2 describe-images --owners amazon --filters \
-"Name=name,Values=amzn-ami-hvm-*-x86_64-gp2" --query 'Images[].[CreationDate,Name,ImageId]' | sort -r
+aws ec2 describe-images --owners amazon \
+--filters "Name=name,Values=amzn-ami-hvm-*-x86_64-gp2" \
+--query "Images[].[CreationDate,Name,ImageId]" | sort -r
 ```
 
 * get AutoScaling group instance ids list:
